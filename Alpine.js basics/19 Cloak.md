@@ -1,0 +1,26 @@
+Cloaking in Alpine is a mechanism to temporary apply style to an element before Alpine.js itself kicks in
+```html
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+
+		<script src="https://unpkg.com/alpinejs" defer></script>
+	</head>
+
+	<style>
+		[x-clock] {
+			display: none !important;
+		}
+	</style>
+	<body>
+		<div x-data="{ show: false }">
+			<div x-show="show" x-cloak="">Here is the Content</div>
+			<button x-on:click="show = true">Show me</button>
+		</div>
+	</body>
+</html>
+```

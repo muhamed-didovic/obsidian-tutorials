@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+
+		<script src="https://unpkg.com/alpinejs" defer></script>
+	</head>
+	<body>
+		<!-- Example 1 -->
+		<!-- <div x-data="{ agreed: false }">
+			<input type="checkbox" x-model="agreed" />
+			<span x-show="agreed"> You have agreed! </span>
+		</div> -->
+
+		<!-- Example 2 -->
+		<!-- <form
+			x-data="{ 
+			users: [],
+			deleteUsers () {
+				console.log(this.users)
+			} 
+		}"
+			x-on:submit.prevent="deleteUsers"
+		>
+			<input type="checkbox" x-model="users" value="1" /> Pepito
+			<input type="checkbox" x-model="users" value="2" /> Sutanito
+			<input type="checkbox" x-model="users" value="3" /> Perencejito
+
+			<button type="submit">Delete</button>
+		</form> -->
+
+		<!-- Example 3 -->
+		<!-- <div x-data="{ plan: '' }">
+			<select x-model="plan">
+				<option value="">Select an Option</option>
+				<option value="yearly">Yearly</option>
+				<option value="monthly">Monthly</option>
+				<option value="daily">Daily</option>
+			</select>
+
+			<span x-show="plan" x-text="`You've chosen the ${plan} plan.`"></span>
+		</div> -->
+
+		<!-- Example 4 -->
+		<div x-data="{ plan: 'monthly' }">
+			<input type="radio" name="plan" value="monthly" x-model="plan" />
+			<input type="radio" name="plan" value="yearly" x-model="plan" />
+
+			<span x-show="plan" x-text="`You've chosen the ${plan} plan.`"></span>
+		</div>
+	</body>
+</html>

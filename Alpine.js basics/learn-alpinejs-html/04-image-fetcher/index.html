@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+
+		<script src="https://unpkg.com/alpinejs" defer></script>
+	</head>
+	<body>
+		<!-- Example 1 -->
+		<div
+			x-data="{
+			query: '',
+			image: '',
+			getImage () {
+				this.image = `https://source.unsplash.com/1600x900/?${this.query}`
+			}
+		}"
+		>
+			<form x-on:submit.prevent="getImage">
+				<input type="text" x-model="query" />
+				<button type="submit">Search</button>
+			</form>
+
+			<div x-show="image">
+				<img x-bind:src="image" style="width: 300px" />
+			</div>
+		</div>
+	</body>
+</html>

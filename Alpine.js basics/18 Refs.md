@@ -1,0 +1,57 @@
+Ref is a way to pinpoint an element within a component so you can reference it
+```html
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+
+		<script src="https://unpkg.com/alpinejs" defer></script>
+	</head>
+	<body>
+		<!-- Basic example -->
+		<div x-data x-init="console.log($refs)">
+			<div x-ref="greeting">hello</div>
+			<div x-ref="anoher">Another</div>
+		</div>
+	</body>
+</html>
+```
+
+image preview upload
+```html
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+
+		<script src="https://unpkg.com/alpinejs" defer></script>
+	</head>
+	<body>
+		
+		<!-- Example image upload preview -->
+		<form
+			x-data="{
+			imagePreview: null,
+			previewImage (e) {
+				const reader = new FileReader()
+				reader.onload = (e) => this.imagePreview = e.target.result
+				reader.readAsDataURL(this.$refs.image.files[0])
+			}
+		}"
+		>
+			<template x-if="imagePreview">
+				<div>
+					<img x-bind:src="imagePreview" style="width: 200px" />
+				</div>
+			</template>
+			<input type="file" x-on:change="previewImage" x-ref="image" />
+		</form>
+	</body>
+</html>
+```

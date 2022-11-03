@@ -72,5 +72,5 @@
 
 Learned in this lesson:
 1. listen and emit events
-2. Listener data: ![[Pasted image 20221026162512.png]]
-3. event on component (console.log($event)):![[Pasted image 20221026163449.png]]
+2. Listener data: ![](./assets/Pasted%20image%2020221026162512.png)
+3. event on component (console.log($event)):![](./assets/Pasted%20image%2020221026163449.png)

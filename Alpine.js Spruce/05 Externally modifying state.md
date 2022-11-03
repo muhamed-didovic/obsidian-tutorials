@@ -60,4 +60,4 @@
 
 Learned in this lesson:
 1. Spruce allows easy access and management or update or modify of data outside of Alpine
-2. console.log(Sprice.store('counter'))![[Pasted image 20221026164042.png]]
+2. console.log(Sprice.store('counter'))![](./assets/Pasted%20image%2020221026164042.png)
